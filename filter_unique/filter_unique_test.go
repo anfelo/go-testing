@@ -17,12 +17,12 @@ func TestFilterUnique(t *testing.T) {
 		{Name: "Alan"},
 	}
 
-	expected := []string{
-		"Andres",
-		"David",
-		"Alexander",
-		"Eva",
-		"Alan",
+	expected := map[string]int{
+		"Andres":    1,
+		"David":     1,
+		"Alexander": 1,
+		"Eva":       1,
+		"Alan":      1,
 	}
 
 	assert.Equal(t, expected, f.FilterUnique(input))
@@ -38,11 +38,11 @@ func TestNegativeFilterUnique(t *testing.T) {
 		{Name: "Alan"},
 	}
 
-	expected := []string{
-		"Andres",
-		"Alexander",
-		"Eva",
-		"Alan",
+	expected := map[string]int{
+		"Andres":    1,
+		"Alexander": 1,
+		"Eva":       1,
+		"Alan":      1,
 	}
 
 	assert.NotEqual(t, expected, f.FilterUnique(input))

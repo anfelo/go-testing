@@ -5,15 +5,10 @@ type Developer struct {
 	Age  int
 }
 
-func FilterUnique(dd []Developer) []string {
-	var u []string
+func FilterUnique(dd []Developer) map[string]int {
 	check := make(map[string]int)
 	for _, d := range dd {
 		check[d.Name] = 1
 	}
-
-	for name := range check {
-		u = append(u, name)
-	}
-	return u
+	return check
 }
