@@ -86,3 +86,11 @@ func TestMain(m *testing.M) {
 	os.Exit(ret)
 }
 ```
+
+## Build Tags
+
+We can differentiate types of tests unit, integration... using build tags. By adding "//go:build <tagname>" at the top of the test file we define the type of test. This can be useful when running tests on the CI/CD pipeline.
+
+## Race Conditions
+
+When running code concurrently or with go coroutines we might encouter race conditions. We can run the build with the flag `-race` so go can catch race conditions in our code.
